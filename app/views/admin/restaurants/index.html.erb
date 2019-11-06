@@ -21,7 +21,7 @@
         <td><%= restaurant.phone_number %></td>
         <td><%= restaurant.category %></td>
         <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Restaurant', new_admin_restaurant_path %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :restaurants
+    resources :restaurants do
+      resources :reviews
+    end
   end
 
   resources :restaurants, only: [:index, :show, :new, :create] do 

@@ -20,5 +20,30 @@
   <%= @restaurant.category %>
 </p>
 
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Rating</th>
+      <th colspan="2"><</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurant.reviews.each do |review| %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= review.rating %></td>
+        <td><%= link_to 'Edit', edit_admin_restaurant_review_path(review) %></td>
+        <td><%= link_to 'Destroy', admin_review_path(review.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', admin_restaurants_path %>
